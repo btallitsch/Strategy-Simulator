@@ -1,0 +1,144 @@
+.card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: cardIn 0.35s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.card_best::before    { background: var(--color-positive); }
+.card_expected::before { background: var(--color-amber); }
+.card_worst::before   { background: var(--color-negative); }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.icon_best    { color: var(--color-positive); }
+.icon_expected { color: var(--color-amber); }
+.icon_worst   { color: var(--color-negative); }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+.confidence {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+/* Delta */
+.delta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.deltaValue {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.deltaPositive { color: var(--color-positive); }
+.deltaNegative { color: var(--color-negative); }
+.deltaNeutral  { color: var(--color-text-secondary); }
+
+.deltaLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Bar */
+.barTrack {
+  height: 3px;
+  background: var(--color-surface-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bar_best    { background: var(--color-positive); }
+.bar_expected { background: var(--color-amber); }
+.bar_worst   { background: var(--color-negative); }
+
+/* Description */
+.description {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Drivers */
+.drivers {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.driversLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.driverTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
