@@ -1,5 +1,5 @@
 import { useCallback, useReducer } from 'react'
-import type { Variable, SimulatorState, VariableImpact } from '@/types'
+import type { SimulatorState, VariableImpact } from '@/types'
 import { runSimulation } from '@/logic/scenarioEngine'
 import {
   addVariable,
